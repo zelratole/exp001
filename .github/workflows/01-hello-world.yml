@@ -1,0 +1,11 @@
+name: 1. Hello World Action
+
+on:
+  workflow_dispatch:
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 인사말 출력하기
+        run: echo "안녕하세요! 첫 번째 GitHub Actions 실행을 축하합니다."

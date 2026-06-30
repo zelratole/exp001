@@ -1,0 +1,13 @@
+name: 2. Push Trigger Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  auto-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 자동 실행 확인
+        run: echo "main 브랜치에 코드가 푸시되어 자동으로 실행되었습니다!"

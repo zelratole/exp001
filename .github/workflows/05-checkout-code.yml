@@ -1,0 +1,16 @@
+name: 5. Checkout Code Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  explore-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 코드 가져오기
+        uses: actions/checkout@v4
+        
+      - name: 파일 목록 확인하기
+        run: ls -la

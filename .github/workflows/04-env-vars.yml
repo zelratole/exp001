@@ -1,0 +1,19 @@
+name: 4. Environment Variables Action
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  STUDENT_NAME: "GitHub 학생"
+  CLASS_SUBJECT: "DevOps 기초"
+
+jobs:
+  print-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 환경 변수 출력하기
+        run: |
+          echo "환영합니다, ${{ env.STUDENT_NAME }}님!"
+          echo "오늘의 과목은 ${{ env.CLASS_SUBJECT }}입니다."

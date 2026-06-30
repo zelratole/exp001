@@ -1,0 +1,23 @@
+name: 7. Job Dependencies Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 빌드 흉내내기
+        run: |
+          echo "프로그램을 빌드하는 중입니다..."
+          sleep 3
+          echo "빌드 완료!"
+
+  test-job:
+    needs: build-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: 테스트 흉내내기
+        run: echo "빌드가 성공했으므로 테스트를 진행합니다!"
