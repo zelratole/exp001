@@ -1,0 +1,15 @@
+name: 4. Issue Detective
+
+on:
+  issues:
+    types: [opened] # 이슈가 새로 열렸을 때만 작동
+
+jobs:
+  detect-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 생성된 이슈 정보 확인
+        run: |
+          echo "🚨 삐빅! 새로운 이슈가 감지되었습니다."
+          echo "이슈 제목: ${{ github.event.issue.title }}"
+          echo "작성자: ${{ github.event.issue.user.login }}"

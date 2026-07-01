@@ -1,0 +1,17 @@
+name: 5. Scheduled Alarm
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 매일 자정(UTC 기준)에 실행
+  workflow_dispatch: # 테스트를 위해 수동 실행도 포함
+  # 분(0~59) 시(0~23) 일(1~31) 월(1~12) 요일(0~6, 0은 일요일)
+
+jobs:
+  daily-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 시스템 점검 메시지
+        run: |
+          echo "⏰ UTC 기준 자정입니다. 새로운 하루가 시작되었습니다!"
+          echo "현재 시간 확인:"
+          date

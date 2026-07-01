@@ -1,0 +1,14 @@
+name: 3. Random Fortune Cookie
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fortune:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 오늘의 운세 뽑기
+        run: |
+          FORTUNES=("오늘은 코딩이 아주 잘 되는 날입니다! 💻" "버그를 한 번에 잡을 수 있는 행운이 따릅니다! 🐞" "커피 한 잔의 여유가 필요한 타이밍입니다. ☕" "새로운 기술을 배우기 완벽한 하루네요! 📚")
+          RANDOM_INDEX=$((RANDOM % 4))
+          echo "🥠 오늘의 포춘 쿠키: ${FORTUNES[$RANDOM_INDEX]}"
